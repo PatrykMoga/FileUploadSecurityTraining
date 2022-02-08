@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Upload file";
+}
+
+
+<form method="post" enctype="multipart/form-data" action="UploadFile">
+    <div>
+        <p>Upload file using this form:</p>
+        <input type="file" name="files" />
+    </div>
+    <div style="margin-top: 5px">
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Upload file" />
+    </div>
+</form>
