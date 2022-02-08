@@ -60,7 +60,7 @@ namespace FileUploadSecurityTraining.Web.Controllers
                 if (!permittedExtensions.Contains(extension))
                     return View("Error");
 
-                var fileName = hiddeFileName ? Guid.NewGuid().ToString() + extension : file.FileName;
+                var fileName = hiddeFileName ? Guid.NewGuid().ToString() + extension : Path.GetFileNameWithoutExtension(file.FileName);
                 var filePath = Path.Combine(path, fileName);
 
                 using Stream fileStream = new FileStream(filePath, FileMode.Create);
